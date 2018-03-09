@@ -1,4 +1,4 @@
-var tools = (function () {
+var utils = (function () {
 
 	var toolsObj = {
 		// $选择器
@@ -19,6 +19,12 @@ var tools = (function () {
             // 标签选择器
             else {
                 return context.getElementsByTagName(selector)
+            }
+        },
+        // 遍历
+        each: function (obj, callBack) {
+            for (var i = 0, len = obj.length; i < len; i++) {
+                callBack(obj[i], i);
             }
         }
 	}
